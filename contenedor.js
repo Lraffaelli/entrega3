@@ -7,7 +7,7 @@ class Contenedor {
   }
   async getAll() {
     try {
-      const contenido = await fs.promises.readFile('./productos.txt', "utf-8");
+      const contenido = await fs.promises.readFile(this.nameFile, "utf-8");
       let productos= JSON.parse(contenido)
       console.log(productos)
       
