@@ -10,12 +10,20 @@ class Contenedor {
       const contenido = await fs.promises.readFile(this.nameFile, "utf-8");
       let productos= JSON.parse(contenido)
       console.log(productos)
-      
+      return productos
       ;
     } catch ( error){
       console.log( error);
     }
   }
-  async getRandom() {}
+  async getRandom() {
+    const contenido = await fs.promises.readFile(this.nameFile, "utf-8");
+    let productos= JSON.parse(contenido)
+    let id= ()=>{
+      let result= Math.floor(Math.random() * productos.length);
+      return result}
+    console.log(productos[id()])
+    return productos[id()]
+  }
 }
 module.exports = { Contenedor };
